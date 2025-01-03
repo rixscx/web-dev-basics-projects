@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="calculator.js"></script>
+</head>
+<body>
+  <!-- Theme toggle button -->
+  <button class="theme-toggle" onclick="toggleTheme()">Switch Theme</button>
+
+  <!-- Main container -->
+  <main class="main-container">
+    <!-- Calculator section -->
+    <section class="calculator">
+      <div class="display-wrapper">
+        <input
+          id="display"
+          type="text"
+          class="display-input"
+          readonly
+          placeholder="0"
+          aria-live="polite">
+      </div>
+      <div class="button-grid">
+        <!-- Basic Operators -->
+        <button onclick="clearDisplay()" class="operator">AC</button>
+        <button onclick="deleteLast()" class="operator">DEL</button>
+        <button onclick="appendToDisplay('%')" class="operator">%</button>
+        <button onclick="appendToDisplay('/')" class="operator">÷</button>
+
+        <!-- Number Buttons -->
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+        <button onclick="appendToDisplay('*')" class="operator">×</button>
+
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+        <button onclick="appendToDisplay('-')" class="operator">−</button>
+
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button onclick="appendToDisplay('+')" class="operator">+</button>
+
+        <button onclick="appendToDisplay('0')" class="zero">0</button>
+        <button onclick="appendToDisplay('.')">.</button>
+        <button onclick="calculateResult()" class="equal">=</button>
+        <button onclick="appendToDisplay('Math.sqrt(')" class="operator">√</button>
+
+        <!-- Advanced Operators -->
+        <button onclick="appendTrigFunction('sin')" class="advanced">sin</button>
+        <button onclick="appendTrigFunction('cos')" class="advanced">cos</button>
+        <button onclick="appendTrigFunction('tan')" class="advanced">tan</button>
+        <button onclick="appendToDisplay('Math.log10(')" class="advanced">log</button>
+        <button onclick="appendToDisplay('Math.log(')" class="advanced">ln</button>
+        <button onclick="appendToDisplay('Math.exp(')" class="advanced">e^x</button>
+      </div>
+    </section>
+
+    <!-- History section -->
+    <section class="history-section">
+      <div class="history-header">
+        <h3>Calculation History</h3>
+        <button onclick="clearHistory()" class="clear-history">Clear History</button>
+      </div>
+      <div id="history" class="history">
+        <p>No history available</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
